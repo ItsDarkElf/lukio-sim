@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>
-            Lukio Simulator
-        </title>
-    </head>
-    <body>
-        <h2>Lukio Simulator</h2>
-    </body>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='styles/main.css'>
+    <script src='scripts/main.js'></script>
+</head>
+<body>
+    <div class="parent">
+        <div class="mainContent">
+            <h2 id="moneyDisplay">Money: 0</h2>
+            <h2 id="incomeDisplay">Income: 0/sec</h2>
+            <h2 id="teachersDisplay">Teachers: 0</h2>
+            <h2 id="studentsDisplay">Students: 0</h2>
+            <h2 id="fundingDisplay">Funding: 0</h2>
+            <img src="images/button.png" class="buttonImg">
+        </div>
+        <div class="sideBar"><ul class="shop">
+            <li><button id="hireTeacherBtn">Hire Teacher (Cost: 5)</button></li>
+            <li class="teacherTraining"><button id="trainTeachersBtn">Train Teachers (cost: 50)</button></li>
+        </ul></div>
+    </div>
+</body>
 </html>
