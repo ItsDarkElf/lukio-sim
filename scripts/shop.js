@@ -2,9 +2,13 @@ let teacherCost = 5;
 let trainingCost = 50;
 let training = 1;
 
-if (Cookies.get('teacherCost') != undefined){teacherCost = Cookies.get('teacherCost')};
-if (Cookies.get('trainingCost') != undefined){trainingCost = Cookies.get('trainingCost')};
-if (Cookies.get('training') != undefined){training = Cookies.get('training')};
+if (Cookies.get('teacherCost') != undefined){teacherCost = parseFloat(Cookies.get('teacherCost'))};
+if (Cookies.get('trainingCost') != undefined){trainingCost = parseFloat(Cookies.get('trainingCost'))};
+if (Cookies.get('training') != undefined){training = parseFloat(Cookies.get('training'))};
+
+teacherCost = Math.floor(teacherCost);
+trainingCost = Math.floor(trainingCost);
+training = Math.floor(training);
 
 $(document).ready(function() {
     $("#trainTeachersBtn").hide();
