@@ -23,6 +23,12 @@ students = Math.floor(students);
 teachers = Math.floor(teachers);
 
 $(document).ready(function() {
+    if (teachers >= 1){
+        $("#trainTeachersBtn").show();
+        $("#hireTeacherBtn").text("Hire Teacher (Cost: " + teacherCost + ")" );
+        $("#trainTeachersBtn").text("Train Teacher (Cost: " + trainingCost + ")" );
+        $("#teachersDisplay").text("Teachers: " + teachers)
+    };
     $(".buttonImg").css("width", "25%");
     $(".buttonImg").css("height", "25%");
     $(".buttonImg").click(function(){
