@@ -2,11 +2,9 @@ let teacherCost = 5;
 let trainingCost = 50;
 let training = 1;
 
-if (Cookies.get('teacherCost') != undefined){
-    teacherCost = Cookies.get('teacherCost');
-    trainingCost = Cookies.get('trainingCost');
-    training = Cookies.get('training');
-}
+if (Cookies.get('teacherCost') != undefined){teacherCost = Cookies.get('teacherCost')};
+if (Cookies.get('trainingCost') != undefined){trainingCost = Cookies.get('trainingCost')};
+if (Cookies.get('training') != undefined){training = parseInt(Cookies.get('training'))};
 
 $(document).ready(function() {
     $("#trainTeachersBtn").hide();
