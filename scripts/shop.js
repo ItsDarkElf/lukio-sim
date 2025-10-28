@@ -1,8 +1,13 @@
 let teacherCost = 5;
 let trainingCost = 50;
+let training = 1;
+
+teacherCost = Cookies.get('teacherCost');
+trainingCost = Cookies.get('trainingCost');
+training = Cookies.get('training');
 
 $(document).ready(function() {
-    $(".teacherTraining").hide();
+    $("#trainTeachersBtn").hide();
     $("#hireTeacherBtn").click(function(){
         if (money >= teacherCost){
             money -= teacherCost;
@@ -15,16 +20,16 @@ $(document).ready(function() {
             $("#teachersDisplay").text("Teachers: " + teachers);
             $("#hireTeacherBtn").text("Hire Teacher (Cost: " + teacherCost + ")" );
             if (teachers > 0){
-                $(".teacherTraining").show();
+                $("#trainTeachersBtn").show();
             };
         };
     });
-    $("#trainTeacherBtn").click(function(){
+    $("#trainTeachersBtn").click(function(){
         if (money >= trainingCost){
             money -= trainingCost;
             trainingCost **= 1.3;
             trainingCost = Math.floor(trainingCost);
-            st
+            training += 1;
             $("#moneyDisplay").text("Money: " + money);
             $("#trainTeachersBtn").text("Train Teacher (Cost: " + trainingCost + ")" );
         };

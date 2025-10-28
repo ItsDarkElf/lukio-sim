@@ -6,11 +6,21 @@ let maxStudents = 10;
 let students = 0;
 let teachers = 0;
 
+if (Cookies.get('multiplier') != undefined){
+    multiplier = Cookies.get('multiplier');
+    money = Cookies.get('money');
+    maxFunding = Cookies.get('maxFunding');
+    funding = Cookies.get('funding');
+    maxStudents = Cookies.get('maxStudents');
+    students = Cookies.get('students');
+    teachers = Cookies.get('teachers');
+}
+
 $(document).ready(function() {
     $(".buttonImg").css("width", "25%");
     $(".buttonImg").css("height", "25%");
     $(".buttonImg").click(function(){
-        money += 1*multiplier;
+        money += 1*multiplier+students;
         console.log("Money: " + money);
         $("#moneyDisplay").text("Money: " + money);
         $(".buttonImg").css("width", "26%");
@@ -20,7 +30,6 @@ $(document).ready(function() {
             $(".buttonImg").css("height", "25%");
         }, 100);
     });
-    let incomeLoop = true;
     setInterval(() => {
         const income1 = money;
         setTimeout(function(){
@@ -29,12 +38,13 @@ $(document).ready(function() {
         }, 1000);
     }, 1000);
     setInterval(() => {
+        maxStudents = teachers * 5 * training;
         students += teachers;
         if (students > maxStudents){
             students = maxStudents;
         };
         maxFunding = students * 10;
-        funding = Math.ceil(students / 2);
+        funding += Math.ceil(students / 2);
         if (funding > maxFunding){
             funding = maxFunding;
         };
@@ -45,4 +55,16 @@ $(document).ready(function() {
         money += funding;
         $("#moneyDisplay").text("Money: " + money);
     }, 1250);
+    setInterval(() => {
+        Cookies.set('money', money, { expires: 3 });
+        Cookies.set('maxFunding', maxFunding, { expires: 3 });
+        Cookies.set('funding', funding, { expires: 3 });
+        Cookies.set('maxStudents', maxStudents, { expires: 3 });
+        Cookies.set('students', students, { expires: 3 });
+        Cookies.set('teachers', teachers, { expires: 3 });
+        Cookies.set('multiplier', multiplier, { expires: 3 });
+        Cookies.set('training', training, { expires: 3 });
+        Cookies.set('teacherCost', teacherCost, { expires: 3 });
+        Cookies.set('trainingCost', trainingCost, { expires: 3 });
+    }, 1000);
 });
