@@ -12,12 +12,6 @@ training = Math.floor(training);
 
 $(document).ready(function() {
     $("#trainTeachersBtn").hide();
-    if (teachers >= 1){
-        $("#trainTeachersBtn").show();
-        $("#hireTeacherBtn").text("Hire Teacher (Cost: " + teacherCost + ")" );
-        $("#trainTeachersBtn").text("Train Teacher (Cost: " + trainingCost + ")" );
-        $("#teachersDisplay").text("Teachers: " + teachers)
-    };
     $("#hireTeacherBtn").click(function(){
         if (money >= teacherCost){
             money -= teacherCost;

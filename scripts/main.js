@@ -74,3 +74,14 @@ $(document).ready(function() {
         Cookies.set('trainingCost', trainingCost, { expires: 3 });
     }, 1000);
 });
+
+$(document).ready(function() {
+    setTimeout(() => {
+        if (teachers >= 1){
+            $("#trainTeachersBtn").show();
+            $("#hireTeacherBtn").text("Hire Teacher (Cost: " + teacherCost + ")" );
+            $("#trainTeachersBtn").text("Train Teacher (Cost: " + trainingCost + ")" );
+            $("#teachersDisplay").text("Teachers: " + teachers)
+        };
+    }, 100);
+});
