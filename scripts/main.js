@@ -7,12 +7,12 @@ let students = 0;
 let teachers = 0;
 
 if (Cookies.get('multiplier') != undefined){ multiplier = Cookies.get('multiplier')};
-if (Cookies.get('money') != undefined){ money = parseInt(Cookies.get('money'))};
-if (Cookies.get('maxFunding') != undefined){ maxFunding = parseInt(Cookies.get('maxFunding'))};
-if (Cookies.get('funding') != undefined){ funding = parseInt(Cookies.get('funding'))};
-if (Cookies.get('maxStudents') != undefined){ maxStudents = parseInt(Cookies.get('maxStudents'))};
-if (Cookies.get('students') != undefined){ students = parseInt(Cookies.get('students'))};
-if (Cookies.get('teachers') != undefined){ teachers = parseInt(Cookies.get('teachers'))};
+if (Cookies.get('money') != undefined){ money = Cookies.get('money')};
+if (Cookies.get('maxFunding') != undefined){ maxFunding = Cookies.get('maxFunding')};
+if (Cookies.get('funding') != undefined){ funding = Cookies.get('funding')};
+if (Cookies.get('maxStudents') != undefined){ maxStudents = Cookies.get('maxStudents')};
+if (Cookies.get('students') != undefined){ students = Cookies.get('students')};
+if (Cookies.get('teachers') != undefined){ teachers = Cookies.get('teachers')};
 
 $(document).ready(function() {
     $(".buttonImg").css("width", "25%");
