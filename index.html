@@ -5,7 +5,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
-    <title>Page Title</title>
+    <title>Lukio Simulator</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='styles/main.css'>
     <script src='scripts/main.js'></script>
@@ -14,16 +14,21 @@
 <body>
     <div class="parent">
         <div class="mainContent">
-            <h2 id="moneyDisplay">Money: 0</h2>
-            <h2 id="incomeDisplay">Income: 0/sec</h2>
-            <h2 id="teachersDisplay">Teachers: 0</h2>
-            <h2 id="studentsDisplay">Students: 0</h2>
-            <h2 id="fundingDisplay">Funding: 0</h2>
+            <h2 id="moneyDisplay">Rahasi: 0</h2>
+            <h2 id="incomeDisplay">Tuottosi: 0/sek</h2>
+            <h2 id="teachersDisplay">Opettajasi: 0</h2>
+            <h2 id="studentsDisplay">Oppilaasi: 0</h2>
+            <h2 id="fundingDisplay">Rahoituksesi: 0</h2>
             <img src="images/button.png" class="buttonImg">
+            <div class="studentAnimation">
+                <img src="images/student1.png" class="studentAnimationImg" id="studentImg1">
+                <img src="images/student2.png" class="studentAnimationImg" id="studentImg2">
+                <img src="images/student3.png" class="studentAnimationImg" id="studentImg3">
+            </div>
         </div>
         <div class="sideBar"><ul class="shop">
-            <li><button id="hireTeacherBtn">Hire Teacher (Cost: 5)</button></li>
-            <li><button id="trainTeachersBtn">Train Teachers (cost: 50)</button></li>
+            <li><button id="hireTeacherBtn">Palkkaa Opettaja (Hinta: 5)</button></li>
+            <li><button id="trainTeachersBtn">Kouluta Opettajiasi (Hinta: 50)</button></li>
         </ul></div>
     </div>
 </body>

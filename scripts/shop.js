@@ -15,14 +15,14 @@ $(document).ready(function() {
     $("#hireTeacherBtn").click(function(){
         if (money >= teacherCost){
             money -= teacherCost;
-            teacherCost **= 1.2;
-            teacherCost = Math.floor(teacherCost);
+            teacherCost *= 1.1;
+            teacherCost = Math.ceil(teacherCost);
             teachers += 1;
-            maxStudents = teachers ** 1.3;
+            maxStudents = teachers ** 1.1;
             maxStudents = Math.ceil(maxStudents);
-            $("#moneyDisplay").text("Money: " + money);
-            $("#teachersDisplay").text("Teachers: " + teachers);
-            $("#hireTeacherBtn").text("Hire Teacher (Cost: " + teacherCost + ")" );
+            $("#moneyDisplay").text("Rahasi: " + money);
+            $("#teachersDisplay").text("Opettajat: " + teachers);
+            $("#hireTeacherBtn").text("Palkkaa Opettaja (Hinta: " + teacherCost + ")" );
             if (teachers > 0){
                 $("#trainTeachersBtn").show();
             };
@@ -31,11 +31,11 @@ $(document).ready(function() {
     $("#trainTeachersBtn").click(function(){
         if (money >= trainingCost){
             money -= trainingCost;
-            trainingCost **= 1.3;
+            trainingCost *= 1.05;
             trainingCost = Math.floor(trainingCost);
             training += 1;
-            $("#moneyDisplay").text("Money: " + money);
-            $("#trainTeachersBtn").text("Train Teacher (Cost: " + trainingCost + ")" );
+            $("#moneyDisplay").text("Rahasi: " + money);
+            $("#trainTeachersBtn").text("Kouluta Opettajiasi (Hinta: " + trainingCost + ")" );
         };
     });
 });

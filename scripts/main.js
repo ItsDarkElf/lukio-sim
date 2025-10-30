@@ -27,8 +27,6 @@ $(document).ready(function() {
     $(".buttonImg").css("height", "25%");
     $(".buttonImg").click(function(){
         money += 1*multiplier+students;
-        console.log("Money: " + money);
-        $("#moneyDisplay").text("Money: " + money);
         $(".buttonImg").css("width", "26%");
         $(".buttonImg").css("height", "26%");
         setTimeout(function(){
@@ -40,11 +38,11 @@ $(document).ready(function() {
         const income1 = money;
         setTimeout(function(){
             const income2 = money;
-            $("#incomeDisplay").text("Income: " + (income2 - income1) + "/sec");
+            $("#incomeDisplay").text("Tuottosi: " + (income2 - income1) + "/sek");
         }, 1000);
     }, 1000);
     setInterval(() => {
-        maxStudents = teachers * 5 * training;
+        maxStudents = teachers * training;
         students += teachers;
         if (students > maxStudents){
             students = maxStudents;
@@ -54,12 +52,11 @@ $(document).ready(function() {
         if (funding > maxFunding){
             funding = maxFunding;
         };
-        $("#studentsDisplay").text("Students: " + students);
-        $("#fundingDisplay").text("Funding: " + funding);
+        $("#studentsDisplay").text("Oppilaasi: " + students);
+        $("#fundingDisplay").text("Rahoituksesi: " + funding);
     }, 2000);
     setInterval(() => {
         money += funding;
-        $("#moneyDisplay").text("Money: " + money);
     }, 1250);
     setInterval(() => {
         Cookies.set('money', money, { expires: 3 });
@@ -79,9 +76,39 @@ $(document).ready(function() {
     setTimeout(() => {
         if (teachers >= 1){
             $("#trainTeachersBtn").show();
-            $("#hireTeacherBtn").text("Hire Teacher (Cost: " + teacherCost + ")" );
-            $("#trainTeachersBtn").text("Train Teacher (Cost: " + trainingCost + ")" );
-            $("#teachersDisplay").text("Teachers: " + teachers)
+            $("#hireTeacherBtn").text("Palkkaa Opettaja (Hinta: " + teacherCost + ")" );
+            $("#trainTeachersBtn").text("Kouluta Opettajiasi (Hinta: " + trainingCost + ")" );
+            $("#teachersDisplay").text("Opettajasi: " + teachers)
         };
     }, 100);
+    setInterval(() => {
+        if (money >= (10**60)){
+            $("#moneyDisplay").text("Rahasi: " + Math.round(money / (10**58))/100 + " Dekiljoonaa");
+        }else if (money >= (10**54)){
+            $("#moneyDisplay").text("Rahasi: " + Math.round(money / (10**52))/100 + " Noviljoonaa");
+        }else if (money >= (10**48)){
+            $("#moneyDisplay").text("Rahasi: " + Math.round(money / (10**46))/100 + " Oktiljoonaa");
+        }else if (money >= (10**42)){
+            $("#moneyDisplay").text("Rahasi: " + Math.round(money / (10**40))/100 + " Septiljoonaa");
+        }else if (money >= (10**36)){
+            $("#moneyDisplay").text("Rahasi: " + Math.round(money / (10**34))/100 + " Sekstiljoonaa");
+        }else if (money >= (10**30)){
+            $("#moneyDisplay").text("Rahasi: " + Math.round(money / (10**28))/100 + " Kvintiljoonaa");
+        }else if (money >= (10**24)){
+            $("#moneyDisplay").text("Rahasi: " + Math.round(money / (10**22))/100 + " Kvadriljoonaa");
+        }else if (money >= (10**18)){
+            $("#moneyDisplay").text("Rahasi: " + Math.round(money / (10**16))/100 + " Triljoonaa");
+        }else if (money >= (10**12)){
+            $("#moneyDisplay").text("Rahasi: " + Math.round(money / (10**10))/100 + " Biljoonaa");
+        }else if (money >= (10**9)){
+            $("#moneyDisplay").text("Rahasi: " + Math.round(money / (10**7))/100 + " Miljardia");
+        }else if (money >= (10**6)){
+            $("#moneyDisplay").text("Rahasi: " + Math.round(money / (10**4))/100 + " Miljoonaa");
+        }else if (money >= (10**3)){
+            $("#moneyDisplay").text("Rahasi: " + Math.round(money/10)/100 + " Tuhatta");
+        }else{
+            $("#moneyDisplay").text("Rahasi: " + money);
+            $("title").text("Lukio Simulator | " + money + "€");
+        }
+    }, 250);
 });
