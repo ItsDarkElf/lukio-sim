@@ -20,7 +20,6 @@ $(document).ready(function() {
             teachers += 1;
             maxStudents = teachers ** 1.1;
             maxStudents = Math.ceil(maxStudents);
-            $("#moneyDisplay").text("Rahasi: " + money);
             $("#teachersDisplay").text("Opettajat: " + teachers);
             $("#hireTeacherBtn").text("Palkkaa Opettaja (Hinta: " + teacherCost + ")" );
             if (teachers > 0){
@@ -31,10 +30,9 @@ $(document).ready(function() {
     $("#trainTeachersBtn").click(function(){
         if (money >= trainingCost){
             money -= trainingCost;
-            trainingCost *= 1.05;
+            trainingCost *= 1.1;
             trainingCost = Math.floor(trainingCost);
             training += 1;
-            $("#moneyDisplay").text("Rahasi: " + money);
             $("#trainTeachersBtn").text("Kouluta Opettajiasi (Hinta: " + trainingCost + ")" );
         };
     });

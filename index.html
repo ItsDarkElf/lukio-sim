@@ -10,9 +10,16 @@
     <link rel='stylesheet' type='text/css' media='screen' href='styles/main.css'>
     <script src='scripts/main.js'></script>
     <script src='scripts/shop.js'></script>
+    <script src="scripts/quickTime.js"></script>
 </head>
 <body>
     <div class="parent">
+        <div class="header">
+            <h1>Lukio Simulator</h1>
+            <h2>Version 0.0.1</h2>
+            <h2 id="dateDisplay">Päivä: 1</h2>
+            <h2 id="nameDisplay">...Lukio</h2>
+        </div>
         <div class="mainContent">
             <h2 id="moneyDisplay">Rahasi: 0</h2>
             <h2 id="incomeDisplay">Tuottosi: 0/sek</h2>
@@ -25,6 +32,9 @@
                 <img src="images/student2.png" class="studentAnimationImg" id="studentImg2">
                 <img src="images/student3.png" class="studentAnimationImg" id="studentImg3">
             </div>
+        </div>
+        <div class="quickTImeArea">
+            <h2 id="quickTimeDisplay">quickTimeEvents</h2>
         </div>
         <div class="sideBar"><ul class="shop">
             <li><button id="hireTeacherBtn">Palkkaa Opettaja (Hinta: 5)</button></li>
