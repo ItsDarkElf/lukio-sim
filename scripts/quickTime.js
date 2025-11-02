@@ -16,11 +16,13 @@ $(document).ready(function() {
             $("#quickTimeDisplay").fadeIn(500);
             const originalTeachers = Math.floor(teachers * 0.75);
             teachers -= Math.floor(teachers * 0.75);
+            $("#teachersDisplay").text("Opettajat: " + teachers);
             setTimeout(() => {
                 $("#quickTimeDisplay").fadeOut(500);
             }, 5000);
             setTimeout(() => {
                 teachers += originalTeachers;
+                $("#teachersDisplay").text("Opettajat: " + teachers);
             }, 5000);
         }else if (quickTimeEvents[Math.floor(Math.random()*10)] == "studentProtest"){
             $("#quickTimeDisplay").text("Opiskelijasi protestoivat! Menetit 10% opiskelijoistasi!");
