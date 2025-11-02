@@ -1,3 +1,48 @@
 body{
     font-family: Arial, sans-serif;
 }
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(5, 0.45fr);
+    grid-template-rows: repeat(5, 0.45fr);
+    gap: 8px;
+}
+
+.mainDisplay, #buttonArea, .header, .quickTimeArea, #div5, .sideBar{
+    background-color: antiquewhite;
+}
+    
+.mainDisplay {
+    grid-row: span 2 / span 2;
+}
+
+.header {
+    grid-column: span 4 / span 4;
+}
+
+#buttonArea {
+    grid-column: span 2 / span 2;
+    grid-row: span 3 / span 3;
+    grid-column-start: 1;
+    grid-row-start: 3;
+}
+
+.quickTimeArea {
+    grid-column: span 3 / span 3;
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+
+#div5 {
+    grid-column: span 2 / span 2;
+    grid-row: span 3 / span 3;
+    grid-column-start: 3;
+    grid-row-start: 3;
+}
+
+.sideBar {
+    grid-row: span 4 / span 4;
+    grid-column-start: 5;
+    grid-row-start: 2;
+}

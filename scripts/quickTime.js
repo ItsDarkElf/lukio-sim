@@ -56,6 +56,6 @@ $(document).ready(function() {
             setTimeout(() => {
                 $("#quickTimeDisplay").fadeOut(500);
             }, 5000);
-        }
+        };
     }, 10000);
 });
