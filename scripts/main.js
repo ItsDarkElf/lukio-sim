@@ -5,6 +5,7 @@ let funding = 0;
 let maxStudents = 10;
 let students = 0;
 let teachers = 0;
+let studentCapacity = 0;
 
 if (Cookies.get('multiplier') != undefined){ multiplier = parseFloat(Cookies.get('multiplier'))};
 if (Cookies.get('money') != undefined){ money = parseFloat(Cookies.get('money'))};
@@ -23,17 +24,6 @@ students = Math.floor(students);
 teachers = Math.floor(teachers);
 
 $(document).ready(function() {
-    $(".buttonImg").css("width", "25%");
-    $(".buttonImg").css("height", "25%");
-    $(".buttonImg").click(function(){
-        money += 1*multiplier+students;
-        $(".buttonImg").css("width", "26%");
-        $(".buttonImg").css("height", "26%");
-        setTimeout(function(){
-            $(".buttonImg").css("width", "25%");
-            $(".buttonImg").css("height", "25%");
-        }, 100);
-    });
     setInterval(() => {
         const income1 = money;
         setTimeout(function(){
@@ -42,12 +32,16 @@ $(document).ready(function() {
         }, 1000);
     }, 1000);
     setInterval(() => {
+        studentCapacity = classrooms * 10;
         maxStudents = teachers * training;
+        if (maxStudents > studentCapacity){
+            maxStudents = studentCapacity;
+        };
         students += teachers;
         if (students > maxStudents){
             students = maxStudents;
         };
-        maxFunding = students * 10;
+        maxFunding = Math.floor(students * 3.5);
         funding += Math.ceil(students / 2);
         if (funding > maxFunding){
             funding = maxFunding;
@@ -57,6 +51,10 @@ $(document).ready(function() {
     }, 2000);
     setInterval(() => {
         money += funding;
+        money -= teachers * training;
+        if (money < 0){
+            money = 0;
+        }
     }, 1250);
     setInterval(() => {
         Cookies.set('money', money, { expires: 3 });

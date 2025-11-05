@@ -6,11 +6,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
     <title>Lukio Simulator</title>
-    <meta name="viewport" content="width=device-width, height=device-height,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' type='text/css' media='screen' href='styles/main.css'>
     <script src='scripts/main.js'></script>
     <script src='scripts/shop.js'></script>
     <script src="scripts/quickTime.js"></script>
+    <script src="scripts/time.js"></script>
+    <script src="scripts/button.js"></script>
 </head>
 <body>
     <div class="parent">
@@ -24,11 +26,11 @@
         <div class="header">
             <h1>Lukio Simulator</h1>
             <h2>Version 0.0.2</h2>
-            <h2 id="dateDisplay">Päivä: 1</h2>
+            <h2 id="dayDisplay">Päivä: 1</h2>
             <h2 id="nameDisplay">...Lukio</h2>
         </div>
         <div class="buttonArea" id="buttonArea">
-            <img src="images/button.png" class="buttonImg">
+            <img src="images/button.png" class="buttonImg" id="buttonImg">
             <div class="studentAnimation">
                 <img src="images/student1.png" class="studentAnimationImg" id="studentImg1">
                 <img src="images/student2.png" class="studentAnimationImg" id="studentImg2">
@@ -40,8 +42,9 @@
         </div>
         <div id="div5"></div>
         <div class="sideBar"><ul class="shop">
-            <li><button id="hireTeacherBtn">Palkkaa Opettaja (Hinta: 5)</button></li>
-            <li><button id="trainTeachersBtn">Kouluta Opettajiasi (Hinta: 50)</button></li>
+            <li><button id="buyClassroom">Osta lisää luokkia (Hinta: 500)</button></li>
+            <li><button id="hireTeacherBtn">Palkkaa Opettaja (Hinta: 15)</button></li>
+            <li><button id="trainTeachersBtn">Kouluta Opettajiasi (Hinta: 100)</button></li>
         </ul></div>
     </div>
 </body>

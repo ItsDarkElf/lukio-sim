@@ -1,6 +1,8 @@
-let teacherCost = 5;
-let trainingCost = 50;
+let teacherCost = 15;
+let trainingCost = 100;
 let training = 1;
+let classrooms = 1;
+let classroomCost = 500;
 
 if (Cookies.get('teacherCost') != undefined){teacherCost = parseFloat(Cookies.get('teacherCost'))};
 if (Cookies.get('trainingCost') != undefined){trainingCost = parseFloat(Cookies.get('trainingCost'))};
@@ -21,7 +23,7 @@ $(document).ready(function() {
             maxStudents = teachers ** 1.1;
             maxStudents = Math.ceil(maxStudents);
             $("#teachersDisplay").text("Opettajat: " + teachers);
-            $("#hireTeacherBtn").text("Palkkaa Opettaja (Hinta: " + teacherCost + ")" );
+            $("#hireTeacherBtn").text("Palkkaa Opettaja: "+teachers+"\n"+"(Hinta: " + teacherCost + ")" );
             if (teachers > 0){
                 $("#trainTeachersBtn").show();
             };
@@ -33,7 +35,16 @@ $(document).ready(function() {
             trainingCost *= 1.1;
             trainingCost = Math.floor(trainingCost);
             training += 1;
-            $("#trainTeachersBtn").text("Kouluta Opettajiasi (Hinta: " + trainingCost + ")" );
+            $("#trainTeachersBtn").text("Kouluta Opettajiasi: "+training+"\n"+"(Hinta: " + trainingCost + ")" );
+        };
+    });
+    $("#buyClassroom").click(function(){
+        if (money >= classroomCost){
+            money -= classroomCost;
+            classroomCost *= 1.1;
+            classroomCost = Math.floor(classroomCost);
+            classrooms += 1;
+            $("#buyClassroom").text("Osta uusi luokkatila: "+classrooms+"\n"+"(Hinta: " + classroomCost + ")" );
         };
     });
 });
