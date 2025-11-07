@@ -67,6 +67,8 @@ $(document).ready(function() {
         Cookies.set('training', training, { expires: 3 });
         Cookies.set('teacherCost', teacherCost, { expires: 3 });
         Cookies.set('trainingCost', trainingCost, { expires: 3 });
+        Cookies.set('classrooms', classrooms, { expires: 3 });
+        Cookies.set('classroomCost', classroomCost, { expires: 3 });
     }, 1000);
 });
 

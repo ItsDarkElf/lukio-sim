@@ -1,5 +1,5 @@
 $(document).ready(function(){
     $(".buttonImg").click(function(){
-        money += Math.floor(1+(students*0.01));
+        money += Math.ceil(1+(students*0.01));
     });
 });

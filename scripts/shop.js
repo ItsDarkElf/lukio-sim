@@ -7,6 +7,8 @@ let classroomCost = 200;
 if (Cookies.get('teacherCost') != undefined){teacherCost = parseFloat(Cookies.get('teacherCost'))};
 if (Cookies.get('trainingCost') != undefined){trainingCost = parseFloat(Cookies.get('trainingCost'))};
 if (Cookies.get('training') != undefined){training = parseFloat(Cookies.get('training'))};
+if (Cookies.get('classrooms') != undefined){classrooms = parseFloat(Cookies.get('classrooms'))};
+if (Cookies.get('classroomCost') != undefined){classroomCost = parseFloat(Cookies.get('classroomCost'))};
 
 teacherCost = Math.floor(teacherCost);
 trainingCost = Math.floor(trainingCost);
