@@ -32,7 +32,7 @@ $(document).ready(function() {
         }, 1000);
     }, 1000);
     setInterval(() => {
-        studentCapacity = classrooms * 10;
+        studentCapacity = classrooms * classroomSize;
         maxStudents = teachers * training;
         if (maxStudents > studentCapacity){
             maxStudents = studentCapacity;
